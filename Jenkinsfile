@@ -10,9 +10,12 @@ pipeline {
 
           stage('Checkout SCM') {
             steps {
-			script{
+			script{ 
+			    sh 'pwd'
+                dir('gitclone'){
 			      git branch: '*/master', credentialsId: 'balu', url: 'https://github.com/balu1996/springboot-sample-app.git'  
                 }
+			    }
 				}
 				}
 
